@@ -6,10 +6,10 @@
 import SwiftUI
 
 @main
-struct AutoCare_OBD2_AppApp: App {
+struct AutoCare: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }
