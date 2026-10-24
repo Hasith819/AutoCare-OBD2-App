@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Xcode user-specific settings
+xcuserdata/
+
+# Build output
+build/
+DerivedData/
+
+# Swift Package Manager
+.build/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Signing files
+*.p12
+*.mobileprovision
