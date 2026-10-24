@@ -41,49 +41,24 @@ struct LoginView: View {
                 
                 VStack(spacing: 16) {
                     
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Email")
-                            .font(AppFonts.label)
-                            .foregroundColor(AppColors.secondaryLabel)
-                        
-                        TextField("", text: $email)
-                            .foregroundColor(AppColors.primaryText)
-                            .textInputAutocapitalization(.never)
-                            .keyboardType(.emailAddress)
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
-                    .background(AppColors.inputBackground)
-                    .cornerRadius(12)
+                    AppTextField(
+                        title: "Email",
+                        placeholder: "",
+                        text: $email,
+                        keyboardType: .emailAddress,
+                        autocapitalization: .never
+                    )
                     
-                    
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Password")
-                            .font(AppFonts.label)
-                            .foregroundColor(AppColors.secondaryLabel)
-                        
-                        SecureField("", text: $password)
-                            .foregroundColor(AppColors.primaryText)
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
-                    .background(AppColors.inputBackground)
-                    .cornerRadius(12)
+                    AppSecureField(
+                        title: "Password",
+                        placeholder: "",
+                        text: $password
+                    )
                 }
                 .padding(.horizontal, 24)
                 
-                
-                Button(action: {
-                    
-                }) {
-                    Text("Sign In")
-                        .font(AppFonts.button)
-                        .fontWeight(.semibold)
-                        .foregroundColor(AppColors.accent)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 16)
-                        .background(AppColors.buttonBackground)
-                        .cornerRadius(12)
+                AppButton(title: "Sign In") {
+                    // Login functionality will be added later.
                 }
                 .padding(.horizontal, 24)
                 

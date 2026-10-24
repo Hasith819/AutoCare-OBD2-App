@@ -42,60 +42,32 @@ struct RegisterView: View {
                     .padding(.horizontal, 24)
 
                     VStack(spacing: 14) {
-                        VStack(alignment: .leading, spacing: 6) {
-                            Text("Full Name")
-                                .font(AppFonts.label)
-                                .foregroundColor(AppColors.secondaryLabel)
+                        AppTextField(
+                            title: "Full Name",
+                            placeholder: "Enter your name",
+                            text: $fullName
+                        )
 
-                            TextField("Enter your name", text: $fullName)
-                                .foregroundColor(AppColors.primaryText)
-                        }
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 12)
-                        .background(AppColors.inputBackground)
-                        .cornerRadius(12)
+                        AppTextField(
+                            title: "Email",
+                            placeholder: "Enter your email",
+                            text: $email,
+                            keyboardType: .emailAddress,
+                            autocapitalization: .never
+                        )
 
-                        VStack(alignment: .leading, spacing: 6) {
-                            Text("Email")
-                                .font(AppFonts.label)
-                                .foregroundColor(AppColors.secondaryLabel)
+                        AppSecureField(
+                            title: "Password",
+                            placeholder: "Create a password",
+                            text: $password
+                        )
 
-                            TextField("Enter your email", text: $email)
-                                .foregroundColor(AppColors.primaryText)
-                                .textInputAutocapitalization(.never)
-                                .keyboardType(.emailAddress)
-                        }
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 12)
-                        .background(AppColors.inputBackground)
-                        .cornerRadius(12)
-
-                        VStack(alignment: .leading, spacing: 6) {
-                            Text("Password")
-                                .font(AppFonts.label)
-                                .foregroundColor(AppColors.secondaryLabel)
-
-                            SecureField("Create a password", text: $password)
-                                .foregroundColor(AppColors.primaryText)
-                        }
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 12)
-                        .background(AppColors.inputBackground)
-                        .cornerRadius(12)
-
-                        VStack(alignment: .leading, spacing: 6) {
-                            Text("Phone Number")
-                                .font(AppFonts.label)
-                                .foregroundColor(AppColors.secondaryLabel)
-
-                            TextField("+94 7X XXX XXXX", text: $phoneNumber)
-                                .foregroundColor(AppColors.primaryText)
-                                .keyboardType(.phonePad)
-                        }
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 12)
-                        .background(AppColors.inputBackground)
-                        .cornerRadius(12)
+                        AppTextField(
+                            title: "Phone Number",
+                            placeholder: "+94 7X XXX XXXX",
+                            text: $phoneNumber,
+                            keyboardType: .phonePad
+                        )
                     }
                     .padding(.horizontal, 24)
 
@@ -125,17 +97,8 @@ struct RegisterView: View {
                     .padding(.horizontal, 24)
                     .padding(.vertical, 4)
 
-                    Button(action: {
+                    AppButton(title: "Create My Account") {
                         // Account creation will be added later.
-                    }) {
-                        Text("Create My Account")
-                            .font(AppFonts.button)
-                            .fontWeight(.semibold)
-                            .foregroundColor(AppColors.accent)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 16)
-                            .background(AppColors.buttonBackground)
-                            .cornerRadius(12)
                     }
                     .padding(.horizontal, 24)
 
@@ -144,12 +107,9 @@ struct RegisterView: View {
                             .font(AppFonts.footer)
                             .foregroundColor(AppColors.secondaryLabel)
 
-                        Button("Sign In") {
+                        AppTextButton(title: "Sign In") {
                             dismiss()
                         }
-                        .font(AppFonts.footer)
-                        .fontWeight(.bold)
-                        .foregroundColor(AppColors.accent)
                     }
                     .padding(.top, 4)
 
