@@ -9,7 +9,8 @@ import SwiftUI
 struct AutoCare: App {
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            //SplashView()
+            AppTabShellView()
         }
     }
 }
